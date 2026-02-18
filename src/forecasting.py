@@ -107,7 +107,7 @@ class TradeForecaster:
                 
         return pd.concat(all_forecasts, ignore_index=True)
     
-    def calculate_tariff_impact_on_forecast(self, forecast_df: pd.DataFrame, tariff_data: pd.DataFrame)
+    def calculate_tariff_impact_on_forecast(self, forecast_df: pd.DataFrame, tariff_data: pd.DataFrame)-> pd.DataFrame:
 
         """
         Adjust forecasts to account for tariff war impact.

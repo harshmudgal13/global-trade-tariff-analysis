@@ -5,7 +5,7 @@
 
 An interactive dashboard analyzing the 2025-2026 US tariff war — the most significant trade policy shift in over a century, with average tariff rates reaching 27% (up from 2.5%).
 
-**[**[Live Demo: ](https://global-trade-tariff-analysis-cxqskiv3tulffaw3diezuz.streamlit.app/)| **[View Dashboard Screenshots](#screenshots)**]
+**[**[Live Demo: ](https://global-trade-analysis.streamlit.app)| **[View Dashboard Screenshots](#screenshots)**]
 
 ---
 
@@ -149,7 +149,7 @@ cd dashboard
 streamlit run app.py
 ```
 
-The dashboard will open in your browser at(https://global-trade-tariff-analysis-cxqskiv3tulffaw3diezuz.streamlit.app/)
+The dashboard will open in your browser at(https://global-trade-analysis.streamlit.app)
 
 ---
 

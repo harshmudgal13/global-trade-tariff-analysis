@@ -45,3 +45,4 @@ data/raw/*.json
 # Temporary Geo Files (we used during fixes)
 # =========================
 ne_110m_admin_0_countries.geojson
+INTERVIEW_PREP.md

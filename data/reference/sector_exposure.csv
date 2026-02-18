@@ -1,0 +1,6 @@
+country_code,sector,us_export_value_usd,tariff_rate,exposure_level
+CHN,Electronics,180000000000,25%,CRITICAL
+IND,Pharmaceuticals,8500000000,26%,HIGH
+CAN,Lumber,7000000000,25%,CRITICAL
+MEX,Automotive,100000000000,25%,CRITICAL
+DEU,Automobiles,25000000000,15%,HIGH

@@ -1,0 +1,15 @@
+country_code,tariff_current_feb2026,tariff_peak,deal_status,special_notes
+USA,0.0,0.0,Stable,Domestic market base
+CHN,47.0,60.0,Trade War,High-tech restrictions active
+CAN,25.0,25.0,Negotiating,Border security link
+MEX,25.0,25.0,Negotiating,Auto-sector focus
+IND,18.0,50.0,Interim Deal,Reduced from 50% on Feb 7
+VNM,46.0,46.0,Trade War,Manufacturing shift target
+DEU,15.0,15.0,Stable,EU block baseline
+GBR,10.0,10.0,Stable,Special relationship tier
+JPN,10.0,10.0,Stable,Tech partnership
+KOR,10.0,10.0,Stable,Tech partnership
+BRA,8.3,12.0,Neutral,Agricultural exporter
+PHL,10.0,10.0,Neutral,Developing nation status
+IDN,10.0,10.0,Neutral,Developing nation status
+CHE,10.0,10.0,Stable,Neutral finance hub

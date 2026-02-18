@@ -149,7 +149,7 @@ cd dashboard
 streamlit run app.py
 ```
 
-The dashboard will open in your browser at `http://localhost:8501`
+The dashboard will open in your browser at **Live Demo: Coming Soon**`
 
 ---
 

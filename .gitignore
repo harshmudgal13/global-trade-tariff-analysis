@@ -1,9 +1,47 @@
-venv/
-*.pyc
+# =========================
+# Python
+# =========================
 __pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+
+# Virtual Environments
+venv/
+env/
+.venv/
+
+# =========================
+# Jupyter
+# =========================
+.ipynb_checkpoints/
+
+# =========================
+# Environment & OS files
+# =========================
 .env
-.DS_store
+.DS_Store
+Thumbs.db
+
+# =========================
+# VS Code
+# =========================
+.vscode/
+
+# =========================
+# Streamlit Secrets
+# =========================
+.streamlit/secrets.toml
+
+# =========================
+# Raw Data (Avoid pushing heavy files)
+# =========================
 data/raw/*.csv
 data/raw/*.json
-*.ipynb_checkpoints
-.vscode/
+!data/raw/.gitkeep
+
+# =========================
+# Temporary Geo Files (we used during fixes)
+# =========================
+ne_110m_admin_0_countries.geojson

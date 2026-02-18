@@ -1,18 +1,36 @@
+"""
+Forecasting Module
+
+Uses Facebook Prophet to generate baseline trade forecasts
+and applies tariff-based adjustments to simulate policy impact.
+
+Author: Harsh Mudgal
+Date: February 2026
+"""
+
 import pandas as pd
 import numpy as np
 from prophet import Prophet
 import plotly.graph_objects as go
-from plotly.subplots import make_subplots
 import warnings
 warnings.filterwarnings('ignore')
 
 class TradeForecaster:
+    """
+    Handles time-series forecasting and tariff-adjusted projections
+    for global trade data.
+    """
     def __init__(self, trade_data: pd.DataFrame):
         self.data = trade_data
         self.models = {}
         self.forecasts = {}
 
     def prepare_country_data(self, country_name: str,metric: str = 'exports') -> pd.DataFrame:
+        """
+        Prepare country-specific data in Prophet-compatible format.
+        Converts yearly trade values into ds/y structure.
+        """
+
         country_data = self.data[self.data['country_name'] == country_name].copy()
         country_data = country_data.sort_values('year')
         country_data = country_data.dropna(subset=[metric])
@@ -25,6 +43,11 @@ class TradeForecaster:
         return prophet_df
     
     def forecast_country(self, country_name: str, metric: str = 'exports', periods: int = 3) -> pd.DataFrame:
+        """
+        Generate baseline forecast for a single country using Prophet.
+        Returns historical values plus future projections.
+        """
+
         df = self.prepare_country_data(country_name, metric)
 
         if len(df) < 4:
@@ -67,7 +90,11 @@ class TradeForecaster:
                                countries: list,
                                metric: str = 'exports',
                                periods: int = 3) -> pd.DataFrame:
-        """Forecast for multiple countries and combine results"""
+        """
+        Run forecasts for multiple countries and combine outputs
+        into a single DataFrame.
+        """
+
         all_forecasts = []
         for country in countries:
             print(f"Forecasting {country}...")
@@ -80,7 +107,8 @@ class TradeForecaster:
                 
         return pd.concat(all_forecasts, ignore_index=True)
     
-    def calculate_tariff_impact_on_forecast(self,forecast_df: pd.DataFrame, tariff_data: pd.DataFrame) -> pd.DataFrame:
+    def calculate_tariff_impact_on_forecast(self, forecast_df: pd.DataFrame, tariff_data: pd.DataFrame)
+
         """
         Adjust forecasts to account for tariff war impact.
         

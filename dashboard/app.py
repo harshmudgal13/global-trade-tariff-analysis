@@ -1,3 +1,13 @@
+"""
+Streamlit Application Entry Point
+
+This file initializes the Global Trade & Tariff Impact Analysis dashboard.
+It handles page routing, layout styling, sidebar navigation, and data loading.
+
+Author: Harsh Mudgal
+Date: February 2026
+"""
+
 import streamlit as st
 import pandas as pd
 import plotly.graph_objects as go
@@ -5,6 +15,7 @@ import plotly.express as px
 import sys
 import os
 
+# Allow dashboard to import custom modules from /src
 sys.path.append(os.path.join(os.path.dirname(__file__), '..', 'src'))
 
 # Page Configuration
@@ -15,7 +26,7 @@ st.set_page_config(
     initial_sidebar_state="expanded"
 )
 
-#CUSTOM CSS
+# Custom CSS Styling
 
 st.markdown("""
 <style>
@@ -109,9 +120,18 @@ st.markdown("""
 </style>
 """, unsafe_allow_html=True)
 
+# Cache data loading to avoid repeated disk reads and improve performance
+
 @st.cache_data
 def load_all_data():
-    """Load all datasets once and cache them"""
+    """
+Load all project datasets and cache them for performance.
+
+Returns:
+    dict: Dictionary containing trade data, tariff profiles,
+          sector exposure, forecasts, and event timelines.
+"""
+
     
     base = os.path.join(os.path.dirname(__file__), '..')
     
@@ -151,7 +171,7 @@ def load_all_data():
 
 data = load_all_data()
 
-#SIDEBAR NAVIGATION
+# Sidebar Navigation UI
 
 with st.sidebar:
     st.markdown("## 🌍 Global Trade Analysis")
@@ -185,7 +205,7 @@ with st.sidebar:
         unsafe_allow_html=True
     )
 
-#Page Routing
+# Page Router – dynamically loads each dashboard section
 
 if page == "🌐 Global Overview":
     from pages.page_overview import render
